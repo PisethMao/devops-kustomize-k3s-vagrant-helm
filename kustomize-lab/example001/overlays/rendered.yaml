@@ -1,0 +1,48 @@
+apiVersion: v1
+data:
+  config.properties: |-
+    APP_ENV:development
+    LOG_LEVEL:debug
+    APP_NAME:demo-dev
+kind: ConfigMap
+metadata:
+  name: app-config-f6bbgtcct2
+---
+apiVersion: v1
+data:
+  secret.env: |
+    UE9TVEdSRVNfVVNFUj1kZXZ1c2VyClBPU1RHUkVTX0RCPWRldl9kYgpQT1NUR1JFU19QQU
+    REPWRldjEzMjQ1Ng==
+kind: Secret
+metadata:
+  name: app-secret-2cfhfff227
+type: Opaque
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: app-config-f6bbgtcct2
+        - secretRef:
+            name: app-secret-2cfhfff227
+        image: backend-dev:v1.0.0
+        name: myapp
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128Mi

@@ -2,16 +2,12 @@ resources:
   - ../../base
 images:
   - name: nginx:stable-alpine3.23-perl
-    newName: backend-dev
+    newName: backend-prod
     newTag: v1.0.0
 replicas:
   - name: myapp
-    count: 4
+    count: 10
 configMapGenerator:
   - name: app-config
     files:
       - config.properties
-secretGenerator:
-  - name: app-secret
-    files:
-      - secret.env

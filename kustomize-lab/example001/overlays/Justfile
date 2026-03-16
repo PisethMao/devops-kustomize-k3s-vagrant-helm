@@ -1,1 +1,7 @@
 #!/bin/bash
+render-prod:
+    echo "Rendering the production manifest..."
+    kubectl kustomize prod
+render-dev:
+    echo "Rendering the development environment manifest..."
+    kubectl kustomize dev
