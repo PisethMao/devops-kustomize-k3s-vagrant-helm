@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+helmGlobals:
+  chartHome: ../../
+helmCharts:
+  - name: sample-chart
+    releaseName: myapp
+    valuesFile: ../../sample-chart/value.yaml

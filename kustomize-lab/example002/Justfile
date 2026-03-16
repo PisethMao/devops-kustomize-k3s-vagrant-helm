@@ -1,0 +1,8 @@
+#!/bin/bash
+set shell := ["bash", "-cu"]
+render-dev:
+    @echo "Rendering development configuration..."
+    kustomize build kustomize/overlays/dev --enable-helm --load-restrictor=LoadRestrictionsNone
+render-prod:
+    @echo "Rendering production configuration..."
+    kustomize build kustomize/overlays/prod --enable-helm --load-restrictor=LoadRestrictionsNone
