@@ -1,0 +1,48 @@
+# --- DO NOT COMMIT: VS Code Remote SSH server ---
+.vscode-server/
+**/.vscode-server/
+# --- DO NOT COMMIT: ssh keys / creds / tokens ---
+.ssh/
+**/.ssh/
+.aws/
+**/.aws/
+.gcp/
+**/.gcp/
+.kube/
+**/.kube/
+.gnupg/
+**/.gnupg/
+.netrc
+**/.netrc
+.git-credentials
+**/.git-credentials
+
+# --- DO NOT COMMIT: history / logs ---
+.bash_history
+.zsh_history
+**/*.log
+
+# --- caches / local config noise ---
+.cache/
+**/.cache/
+.local/
+**/.local/
+.config/
+**/.config/
+.npm/
+**/.npm/
+.yarn/
+**/.yarn/
+.pnpm-store/
+**/.pnpm-store/
+.vim/
+**/.vim/
+.local/share/fish/
+**/.local/share/fish/
+# GitHub CLI auth (contains tokens)
+.config/gh/
+**/.config/gh/
+actions-runner/
+.vscode-server/
+.snap/
+.kube/

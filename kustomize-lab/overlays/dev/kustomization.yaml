@@ -1,0 +1,11 @@
+resources:
+  - ../../base
+
+namePrefix: dev-
+
+commonLabels:
+  env: dev
+
+replicas:
+  - name: demo-app
+    count: 2
